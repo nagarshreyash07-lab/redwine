@@ -1,0 +1,2 @@
+.art { position: absolute; inset: 0; background: radial-gradient(circle at 72% 28%, color-mix(in srgb, var(--a) 80%, white 20%), color-mix(in srgb, var(--a) 55%, black) 52%, #130e10 100%); transition: transform .9s var(--ease); }
+.art svg { width: 100%; height: 100%; display: block; }

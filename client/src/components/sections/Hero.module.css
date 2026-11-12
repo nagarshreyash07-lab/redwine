@@ -1,0 +1,28 @@
+.hero { position: relative; min-height: 100svh; display: flex; align-items: center; overflow: hidden; background: radial-gradient(ellipse at 75% 50%, #3a2027 0%, #1c1717 30%, #11100f 70%); padding: 130px 0 110px; }
+.particles { position: absolute; inset: 0; opacity: .75; }
+.vignette { position: absolute; inset: 0; background: radial-gradient(ellipse at 30% 50%, transparent 40%, rgba(17, 16, 15, .55) 100%); pointer-events: none; }
+.copy { min-width: 0; }
+.inner { position: relative; z-index: 2; display: grid; grid-template-columns: minmax(0, 1.15fr) minmax(0, .85fr); align-items: center; gap: 40px; }
+.eyebrow { display: flex; align-items: center; gap: 12px; margin: 0; font-size: .67rem; letter-spacing: .18em; color: #a7a09a; font-weight: 600; }
+.eyebrow span { width: 7px; height: 7px; border-radius: 50%; background: var(--wine-bright); box-shadow: 0 0 14px #c25570; animation: blink 2.4s ease-in-out infinite; }
+.title { font: 600 clamp(3.1rem, 7vw, 6.8rem)/1 var(--font-display); letter-spacing: -.075em; margin: 30px 0 26px; }
+.line { display: block; }
+.mask { display: inline-block; overflow: hidden; vertical-align: top; padding: 0 .02em .14em 0; margin: 0 .2em -.14em 0; }
+.mask > span { display: inline-block; will-change: transform; }
+.em { font-family: var(--font-serif); font-style: italic; font-weight: 400; letter-spacing: -.03em; color: var(--wine-light); padding-right: .06em; }
+.intro { max-width: 440px; color: #b8b0aa; line-height: 1.8; font-size: 1.02rem; margin: 0; }
+.cta { display: flex; flex-wrap: wrap; gap: 14px; margin-top: 36px; }
+.orbWrap { width: min(100%, 560px); justify-self: center; }
+.foot { position: absolute; z-index: 2; left: 50%; bottom: 30px; transform: translateX(-50%); display: flex; justify-content: space-between; color: #827b76; font-size: .62rem; letter-spacing: .12em; }
+.foot a { color: #c3bcb7; text-decoration: none; display: flex; align-items: center; gap: 9px; }
+.foot a svg { animation: bob 2s ease-in-out infinite; }
+@keyframes blink { 0%, 100% { opacity: 1; } 50% { opacity: .35; } }
+@keyframes bob { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(5px); } }
+
+@media (max-width: 900px) {
+  .hero { align-items: flex-start; padding-top: 120px; }
+  .inner { grid-template-columns: 1fr; gap: 10px; }
+  .orbWrap { position: absolute; width: 440px; right: -190px; bottom: -90px; opacity: .42; z-index: -1; }
+  .foot span { display: none; }
+  .foot { justify-content: flex-end; }
+}

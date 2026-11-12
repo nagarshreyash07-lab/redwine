@@ -1,0 +1,15 @@
+.footer { background: var(--ink); color: var(--muted); padding-top: 80px; border-top: 1px solid var(--line); }
+.top { display: flex; justify-content: space-between; gap: 48px; flex-wrap: wrap; padding-bottom: 60px; }
+.logo { color: var(--white); text-decoration: none; font: 800 1.6rem var(--font-display); letter-spacing: -.07em; }
+.logo span { color: var(--wine-light); }
+.brand p { margin: 16px 0 0; max-width: 260px; line-height: 1.7; font-size: .9rem; }
+.cols { display: flex; gap: clamp(40px, 8vw, 110px); }
+.cols div { display: grid; gap: 12px; align-content: start; }
+.cols h4 { margin: 0 0 6px; color: var(--white); font-size: .7rem; letter-spacing: .16em; text-transform: uppercase; font-weight: 600; }
+.cols a { color: var(--muted); text-decoration: none; font-size: .9rem; transition: color .2s; }
+.cols a:hover { color: var(--white); }
+.privacy { width: fit-content; padding: 0; border: 0; background: none; color: var(--muted); text-align: left; font-size: .9rem; transition: color .2s; }
+.privacy:hover { color: var(--white); }
+.bottom { display: flex; justify-content: space-between; align-items: center; gap: 16px; flex-wrap: wrap; padding-block: 26px; border-top: 1px solid var(--line); font-size: .76rem; }
+.bottom button { display: inline-flex; align-items: center; gap: 8px; background: none; border: 0; color: var(--muted); font-size: .76rem; transition: color .2s; }
+.bottom button:hover { color: var(--white); }

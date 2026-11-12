@@ -1,0 +1,9 @@
+.section { background: #120d0f; color: #fff; overflow: hidden; }
+.glow { position: absolute; left: 50%; top: 50%; width: 900px; height: 900px; transform: translate(-50%, -50%); background: radial-gradient(circle, rgba(118, 45, 64, .28), transparent 62%); pointer-events: none; }
+.label { display: inline-flex; align-items: center; gap: 12px; font-size: .68rem; letter-spacing: .18em; font-weight: 600; color: var(--muted); text-transform: uppercase; }
+.label i { width: 28px; height: 1px; background: var(--wine-light); }
+.words { margin: 50px 0 36px; position: relative; }
+.words h2 { font: 700 clamp(3.4rem, 10vw, 9rem)/.98 var(--font-display); letter-spacing: -.085em; margin: 0; color: rgba(255, 255, 255, .92); transition: color .4s, transform .6s var(--ease); }
+.words h2:hover { color: #fff; transform: translateX(14px); }
+.words h2 span { color: var(--wine-bright); }
+.tag { color: var(--muted); font-family: var(--font-serif); font-style: italic; font-size: clamp(1.3rem, 2.4vw, 1.9rem); margin: 0; }

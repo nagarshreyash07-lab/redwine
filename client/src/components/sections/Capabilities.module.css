@@ -1,0 +1,20 @@
+.section { background: var(--ink-2); color: #fff; overflow: hidden; }
+.top { display: flex; justify-content: space-between; align-items: flex-end; gap: 40px; margin-bottom: 64px; flex-wrap: wrap; }
+.lead { max-width: 320px; color: var(--muted); font-size: .92rem; line-height: 1.8; margin: 0; }
+.grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+.cardWrap { display: flex; }
+.card { --mx: 50%; --my: 50%; position: relative; width: 100%; padding: 34px; border-radius: var(--radius); border: 1px solid var(--line); background: rgba(255, 255, 255, .025); overflow: hidden; transition: transform .5s var(--ease), border-color .4s; }
+.card::before { content: ""; position: absolute; inset: 0; background: radial-gradient(420px circle at var(--mx) var(--my), rgba(155, 58, 82, .28), transparent 60%); opacity: 0; transition: opacity .4s; pointer-events: none; }
+.card:hover { transform: translateY(-6px); border-color: rgba(194, 122, 139, .45); }
+.card:hover::before { opacity: 1; }
+.cardTop { position: relative; display: flex; justify-content: space-between; align-items: center; margin-bottom: 56px; }
+.icon { display: grid; place-items: center; width: 50px; height: 50px; border-radius: 14px; background: rgba(155, 58, 82, .22); color: var(--wine-light); border: 1px solid rgba(194, 122, 139, .28); }
+.num { color: #7d6a6e; font-size: .78rem; letter-spacing: .1em; }
+.card h3 { position: relative; font: 600 1.5rem/1.2 var(--font-display); letter-spacing: -.04em; margin: 0 0 12px; }
+.card p { position: relative; color: var(--muted); font-size: .9rem; line-height: 1.7; margin: 0 0 26px; }
+.card ul { position: relative; list-style: none; margin: 0; padding: 22px 0 0; border-top: 1px solid var(--line); display: grid; gap: 10px; }
+.card li { display: flex; align-items: center; gap: 10px; font-size: .84rem; color: #cfc7c1; }
+.card li svg { color: var(--wine-light); flex-shrink: 0; }
+.arrow { position: absolute; right: 28px; bottom: 28px; color: var(--wine-light); opacity: 0; transform: translate(-8px, 8px); transition: opacity .4s, transform .4s var(--ease); }
+.card:hover .arrow { opacity: 1; transform: none; }
+@media (max-width: 960px) { .grid { grid-template-columns: 1fr; } .cardTop { margin-bottom: 34px; } }

@@ -1,0 +1,10 @@
+.wrap { max-width: 760px; }
+.label { display: inline-flex; align-items: center; gap: 12px; font-size: .68rem; letter-spacing: .18em; font-weight: 600; color: var(--muted-dark); text-transform: uppercase; }
+.label i { width: 28px; height: 1px; background: var(--wine); }
+.title { font: 600 clamp(2.4rem, 5vw, 4.4rem)/1.04 var(--font-display); letter-spacing: -.06em; margin: 22px 0 0; }
+.title em { font-family: var(--font-serif); font-weight: 400; font-style: italic; letter-spacing: -.02em; color: var(--wine); padding-right: .04em; }
+.intro { color: var(--muted-dark); line-height: 1.8; max-width: 520px; margin: 22px 0 0; }
+.light .label { color: var(--muted); }
+.light .label i { background: var(--wine-light); }
+.light .title em { color: var(--wine-light); }
+.light .intro { color: var(--muted); }

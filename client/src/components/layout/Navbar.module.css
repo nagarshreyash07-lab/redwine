@@ -1,0 +1,27 @@
+.header { position: fixed; inset: 0 0 auto; z-index: 50; transition: background .4s, backdrop-filter .4s, border-color .4s; border-bottom: 1px solid transparent; }
+.scrolled { background: rgba(17, 16, 15, .78); backdrop-filter: blur(16px) saturate(140%); -webkit-backdrop-filter: blur(16px) saturate(140%); border-color: var(--line); }
+.nav { position: relative; z-index: 2; width: min(var(--container), calc(100% - 2 * var(--gutter))); height: 84px; margin: auto; display: flex; align-items: center; justify-content: space-between; gap: 24px; transition: height .4s var(--ease); }
+.scrolled .nav { height: 68px; }
+.logo { color: var(--white); text-decoration: none; font: 800 1.32rem var(--font-display); letter-spacing: -.07em; }
+.logo span { color: var(--wine-light); }
+.links { display: flex; align-items: center; gap: 6px; }
+.links a { position: relative; color: #c5c0bc; text-decoration: none; font-size: .84rem; padding: 10px 14px; border-radius: 999px; transition: color .25s, background .25s; }
+.links a:hover { color: var(--white); }
+.links a.active { color: var(--white); background: rgba(255, 255, 255, .08); }
+.actions { display: flex; align-items: center; gap: 14px; }
+.signin { color: #c5c0bc; text-decoration: none; font-size: .84rem; transition: color .25s; }
+.signin:hover { color: var(--white); }
+.cta { display: inline-flex; align-items: center; gap: 8px; color: var(--white); text-decoration: none; font-size: .84rem; font-weight: 600; padding: 11px 18px; border-radius: 999px; border: 1px solid rgba(255, 255, 255, .22); transition: background .3s, border-color .3s; }
+.cta:hover { background: var(--wine); border-color: var(--wine); }
+.menu { display: none; background: none; border: 0; color: var(--white); padding: 6px; }
+.sheet { position: fixed; inset: 0; z-index: 1; background: rgba(14, 12, 12, .97); padding: 120px var(--gutter) 40px; display: flex; flex-direction: column; gap: 6px; }
+.sheet a { display: block; color: var(--white); text-decoration: none; font: 600 clamp(2rem, 9vw, 3.2rem) var(--font-display); letter-spacing: -.05em; padding: 10px 0; border-bottom: 1px solid var(--line); }
+.sheet a.sheetMuted { color: var(--muted); font-size: 1.2rem; border: 0; margin-top: 12px; }
+
+@media (max-width: 900px) {
+  .links { display: none; }
+  .workshop { display: none; }
+  .menu { display: block; }
+  .nav { height: 72px; }
+}
+@media (max-width: 420px) { .cta { display: none; } }
