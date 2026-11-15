@@ -1,23 +1,48 @@
+
 import { useEffect, useState } from "react";
 import { apiRequest } from "../services/api";
 
 /**
- * Loads a public list from the API. Falls back to bundled content when the API is
- * unreachable or still empty, so the site never renders blank.
+ * Loads public content from the API.
+ * Uses bundled fallback content if the API fails or returns an empty list.
  */
-export default function useContent(path, fallback) {
+export default function useContent(path, fallback = []) {
   const [items, setItems] = useState(fallback);
   const [live, setLive] = useState(false);
 
   useEffect(() => {
     let cancelled = false;
-    apiRequest(path)
-      .then((res) => {
-        if (!cancelled && Array.isArray(res.items) && res.items.length) { setItems(res.items); setLive(true); }
-      })
-      .catch(() => {});
-    return () => { cancelled = true; };
-  }, [path]);
+
+    // Immediately show fallback content while fetching.
+    setItems(fallback);
+    setLive(false);
+
+    async function loadContent() {
+      try {
+        const res = await apiRequest(path);
+
+        if (cancelled) return;
+
+        if (Array.isArray(res?.items) && res.items.length > 0) {
+          setItems(res.items);
+          setLive(true);
+        }
+      } catch (error) {
+        if (!cancelled) {
+          console.error(
+            `Unable to load ${path}; using bundled content instead:`,
+            error
+          );
+        }
+      }
+    }
+
+    loadContent();
+
+    return () => {
+      cancelled = true;
+    };
+  }, [path, fallback]);
 
   return { items, live };
 }
